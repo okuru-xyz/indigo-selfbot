@@ -1,0 +1,4 @@
+colorama==0.4.3
+discord.py==1.7.2
+discord==1.0.1
+discum==1.1.0
