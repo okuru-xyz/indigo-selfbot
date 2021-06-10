@@ -1,9 +1,16 @@
+
 # Indigo Selfbot
 
 Free OpenSource selfbot, Premium version can be found at https://okuru.xyz (5$.)
 
+## INFO
+Some people have been using the `discord.py` module, we've switched from this to `discord.py-self` as it has better support.
+To install `discord.py-self` do the following:
+```bash
+pip[3] install -U discord.py-self
+```
 
-# Usage
+## Usage
 
 ```bash
 python[3] main.py
