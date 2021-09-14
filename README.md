@@ -1,9 +1,8 @@
 
 # Indigo Selfbot
+A free open-source discord selfbot created in `python` using packages such as `discord.py-self` and `discum`. Filled with commands such as **massmention**.
 
-Free OpenSource selfbot, Premium version can be found at https://okuru.xyz (5$.)
-
-## INFO
+## Info
 Some people have been using the `discord.py` module, we've switched from this to `discord.py-self` as it has better support.
 To install `discord.py-self` do the following:
 ```bash
@@ -22,12 +21,12 @@ To install you can either use git, or download the zip directly \
 ```bash
 git clone https://github.com/Gowixx/indigo-selfbot.git
 ```
----
+----
 ```bash
 cd indigo-selfbot
 ```
 ```bash
-pip install -r requirements.txt
+pip[3] install -r requirements.txt
 ```
 ```bash
 python[3] main.py
