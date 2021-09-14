@@ -1,4 +1,3 @@
-colorama==0.4.3
-discord.py-self==1.7.2
-discord==1.0.1
-discum==1.1.0
+colorama
+discord.py-self
+discum
