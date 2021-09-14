@@ -25,9 +25,12 @@ git clone https://github.com/Gowixx/indigo-selfbot.git
 ```bash
 cd indigo-selfbot
 ```
+
 ```bash
-pip[3] install -r requirements.txt
+setup.bat
 ```
+^ If you're on linux do it urself lol ^
+---
 ```bash
 python[3] main.py
 ```
