@@ -12,6 +12,7 @@ try:
     accountToken = config.get('Discord Token')
     prefix = config.get('Command Prefix')
     embedColor = int(config.get('Embed Color').replace('#', '0x'), 0)
+    nitroSniper = config.get('Nitro Sniper')
 except Exception as e:
     logging.printError(f'Failed to load config. Exception: {e}')
     while True: time.sleep(150)
@@ -33,8 +34,6 @@ for file in os.listdir('./cogs'):
         except Exception as e:
             logging.printError(f'Failed to load the {file} cog. Exception: {e}')
 try:
-    client.run(
-        accountToken
-    )
+    client.run(accountToken)
 except Exception as e:
     logging.printError(f'Failed to login. Exception: {e}')
