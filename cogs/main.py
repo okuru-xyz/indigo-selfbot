@@ -13,7 +13,8 @@ class Main(commands.Cog):
             outMessage += (f"\n\n__**{cog}:**__\n")
             cog = self.client.get_cog(cog)
             outMessage += '\n'.join([f'**`{prefix}`{command}{command.usage}** » {command.description}' for command in cog.get_commands()])
-        await ctx.send(
+        await ctx.message.edit(
+            content='',
             embed=discord.Embed(
                 color=embedColor,
                 title='Indigo - Help',
