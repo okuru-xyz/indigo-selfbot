@@ -1,6 +1,6 @@
 
 # Indigo Selfbot
-A free open-source discord selfbot created in `python` using packages such as `discord.py-self` and `discum`. Filled with commands such as **massmention**.
+A free open-source discord selfbot created in `python` using packages such as `discord.py-self` and `discum`. Filled with commands such as `massmention` and `dankmemerfarmer`.
 
 ## Info
 Some people have been using the `discord.py` module, we've switched from this to `discord.py-self` as it has better support.
