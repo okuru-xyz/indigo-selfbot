@@ -6,7 +6,7 @@ init()
 class info:
     name = 'Indigo'
     prefix = '[Indigo]'
-    version = 1.2
+    version = 1.3
     logSmallActions = False
 
 class logging:
