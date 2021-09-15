@@ -1,4 +1,4 @@
-import discord, base64, discum
+import discord, base64, discum, asyncio
 from discord.ext import commands
 from main import prefix, embedColor, accountToken
 from utils import *
@@ -6,6 +6,7 @@ from utils import *
 class Abuse(commands.Cog):
     def __init__(self, client):
         self.client = client
+        self.dankMemerFarming = False
 
     @commands.command(name='halftoken', description='Get half of a users token.', aliases=['token', 'getusertoken'], usage='')
     async def halftoken(self, ctx, user: discord.User):
@@ -15,6 +16,30 @@ class Abuse(commands.Cog):
             color=embedColor
         )
         await ctx.message.edit(content='', embed=embed)
+
+    @commands.command(name='farmdankmemer', description='Start farming dank memer.', usage='')
+    @commands.guild_only()
+    async def farmdankmemer(self, ctx):
+        if(self.dankMemerFarming):
+            return(await ctx.message.edit(content='> You are already farming.'))
+        self.dankMemerFarming = True
+        await ctx.message.edit(content='> Enabled Farming.', delete_after=15)
+        while self.dankMemerFarming:
+            async with ctx.typing():
+                for item in ['beg', 'fish', 'hunt', 'dep max', 'bal']:
+                    await ctx.send(f'pls {item}')
+                await asyncio.sleep(6)
+                await ctx.guild.ack()
+                await asyncio.sleep(45)
+
+
+    @commands.command(name='stopfarmdankmemer', description='Start farming dank memer.', usage='')
+    @commands.guild_only()
+    async def stopfarmdankmemer(self, ctx):
+        if(not self.dankMemerFarming):
+            return(await ctx.message.edit(content='> You aren\'t farming currently.'))
+        self.dankMemerFarming = False
+        await ctx.message.edit(content='> Disabled Farming.', delete_after=15)
 
     @commands.command(name='massmention', description='Ghost mention every user in the channel.', usage='', aliases=['WhatTimeIsIt', 'amogus'])
     @commands.guild_only()
