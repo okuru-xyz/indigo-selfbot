@@ -1,3 +1,4 @@
 colorama
 discord.py-self
 discum
+httpx
