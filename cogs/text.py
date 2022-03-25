@@ -1,6 +1,8 @@
+from socket import MSG_DONTROUTE
+from click import edit
 import discord, base64
 from discord.ext import commands
-from main import prefix, embedColor
+from main import prefix, editMSG
 
 class Text(commands.Cog):
     def __init__(self, client):
@@ -25,10 +27,9 @@ class Text(commands.Cog):
             decoded = '**Error**: Failed to encode.'
         embed = discord.Embed(
             title='Base64 Encode',
-            description=decoded,
-            color=embedColor
+            description=decoded
         )
-        await ctx.message.edit(content='', embed=embed)
+        await editMSG(ctx, embed)
 
     @commands.command(name='b64decode', description='Decode a base64 message.', usage=' [message]', aliases=['base64decode'])
     async def b64decode(self, ctx, *, message: str):
@@ -38,9 +39,8 @@ class Text(commands.Cog):
             decoded = '**Error**: Failed to decode.'
         embed = discord.Embed(
             title='Base64 Decode',
-            description=decoded,
-            color=embedColor
+            description=decoded
         )
-        await ctx.message.edit(content='', embed=embed)
+        await editMSG(ctx, embed)
 def setup(client):
     client.add_cog(Text(client))

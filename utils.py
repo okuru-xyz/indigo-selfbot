@@ -6,7 +6,7 @@ init()
 class info:
     name = 'Indigo'
     prefix = '[Indigo]'
-    version = 1.3
+    version = 1.4
     logSmallActions = False
 
 class logging:
@@ -21,7 +21,7 @@ class logging:
         )
     
     def verbose(message: str) -> str:
-        if logSmallActions:
+        if info.logSmallActions:
             return(print(message))
         else:
             return()

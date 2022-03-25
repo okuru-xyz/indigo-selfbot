@@ -1,6 +1,6 @@
 import discord, base64, discum, httpx, datetime, re, threading
 from discord.ext import commands
-from main import prefix, embedColor, accountToken, nitroSniper
+from main import prefix, accountToken, nitroSniper
 from utils import *
 
 class Listeners(commands.Cog):
@@ -18,19 +18,20 @@ class Listeners(commands.Cog):
             
             if(code in self.checkedCodes):
                 return(logging.printError(f'Code {code} was already sent.'))
-            
+
+        if len(code) in [16, 24]:
             headers = {
                 'user-agent': 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; FSL 7.0.5.01003)',
                 'authorization': accountToken
             }
-    
+
             request = httpx.post(
-                f'https://discordapp.com/api/v6/entitlements/gift-codes/{code}/redeem', 
+                f'https://discordapp.com/api/v9/entitlements/gift-codes/{code}/redeem', 
                 headers=headers,
             ).text
-        
+
             elapsedTime = datetime.datetime.now() - startTime
-            elapsedTime = f'{elapsed.seconds}.{elapsed.microseconds}'
+            elapsedTime = f'{elapsedTime.seconds}.{elapsedTime.microseconds}'
 
             if 'subscription_plan' in request:
                 logging.print(f'| NITRO | Redeemed code {code}')

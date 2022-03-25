@@ -11,7 +11,6 @@ try:
     config = json.load(open('config.json'))
     accountToken = config.get('Discord Token')
     prefix = config.get('Command Prefix')
-    embedColor = int(config.get('Embed Color').replace('#', '0x'), 0)
     nitroSniper = config.get('Nitro Sniper')
 except Exception as e:
     logging.printError(f'Failed to load config. Exception: {e}')
@@ -25,6 +24,19 @@ client = commands.Bot(
     auto_reconnect=True,
     self_bot=True
 )
+
+async def editMSG(ctx, embed: discord.Embed, deleteDelay: int=60):
+    codeBlock = """```asciidoc
+    {title}
+    {description}
+    {footer}
+    ```""".format(title = f"( {embed.title} )",
+    description = embed.description,
+    footer = embed.footer)
+    await ctx.message.edit(
+        content=codeBlock,
+        delete_after=deleteDelay
+    )
 
 # Credits to Lucas on YouTube
 for file in os.listdir('./cogs'):
