@@ -1,6 +1,6 @@
 import discord, base64, discum, asyncio
 from discord.ext import commands
-from main import prefix, embedColor, accountToken
+from main import editMSG, prefix, accountToken
 from utils import *
 
 class Abuse(commands.Cog):
@@ -12,10 +12,9 @@ class Abuse(commands.Cog):
     async def halftoken(self, ctx, user: discord.User):
         embed = discord.Embed(
             title='Token Finder',
-            description=base64.b64encode(str(user.id).encode()).decode(),
-            color=embedColor
+            description=base64.b64encode(str(user.id).encode()).decode()
         )
-        await ctx.message.edit(content='', embed=embed)
+        await editMSG(ctx, embed)
 
     @commands.command(name='farmdankmemer', description='Start farming dank memer.', usage='')
     @commands.guild_only()

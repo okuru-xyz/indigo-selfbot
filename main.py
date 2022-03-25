@@ -1,4 +1,4 @@
-import discord, discum, json, os, sys, base64, asyncio, random, time
+import discord, discum, json, os, sys, base64, asyncio, random, time, logging
 from discord.ext import commands
 from colorama import Fore, init
 from utils import *
@@ -49,3 +49,5 @@ try:
     client.run(accountToken)
 except Exception as e:
     logging.printError(f'Failed to login. Exception: {e}')
+    while True:
+        time.sleep(1)
