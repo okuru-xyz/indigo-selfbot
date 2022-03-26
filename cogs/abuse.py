@@ -1,7 +1,8 @@
-import discord, base64, discum, asyncio
+import discord, base64, discum, asyncio, logging
 from discord.ext import commands
-from main import editMSG, prefix, accountToken
+from main import editMSG, accountToken
 from utils import *
+from colorama import Fore
 
 class Abuse(commands.Cog):
     def __init__(self, client):

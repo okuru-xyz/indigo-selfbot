@@ -2,7 +2,7 @@ from socket import MSG_DONTROUTE
 from click import edit
 import discord, base64
 from discord.ext import commands
-from main import prefix, editMSG
+from main import editMSG
 
 class Text(commands.Cog):
     def __init__(self, client):
