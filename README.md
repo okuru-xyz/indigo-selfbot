@@ -41,6 +41,6 @@ Sometimes you may get the following error:
 Connection Dropped. Retrying in 10 seconds.
 ```
 This means that your account has been ratelimited, to fix it you have a couple days, or use another account. This has nothing to do with your IP Adress.
-
+Another way to fix it and immediately use it, is enter the command `kill 1` in console.
 ## Requests
 Just create an issue if you want a feature request
